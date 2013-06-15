@@ -41,6 +41,16 @@ describe("Bonus - FizzBuzz", function() {
 		});
 	});
 
+	it("should return FizzBuzz if number contains both three and five", function() {
+		var numbersContainingThreeAndFive = [53, 35, 3152, 5533];
+
+		numbersContainingThreeAndFive.forEach(function(input) {
+			var expectedValue = "FizzBuzz";
+			var result = FizzBuzz(input);
+			expect(result)._toBe(expectedValue, "Expected " + input + " to yield " + expectedValue + " instead of " + result);
+		});
+	});
+
 	it("should return input if number is not divisible by three or five", function() {
 		var numbersNotDivisibleByThreeOrFive = [7, 11, 77, 112, 442];
 
