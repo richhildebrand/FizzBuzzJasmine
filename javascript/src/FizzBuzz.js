@@ -32,15 +32,32 @@ var stringInspector = function() {
 	}
 }();
 
+var wordGetter = function() {
+
+	var getFizzIfRequired = function(input) {
+		if(calculator.isDivisibleByThree(input) || stringInspector.containsThree(input)) {
+			return "Fizz";
+		}
+		return "";
+	}
+
+	var getBuzzIfRequired = function(input) {
+		if(calculator.isDivisibleByFive(input) || stringInspector.containsFive(input)) {
+			return "Buzz";
+		}
+		return "";
+	}
+
+	return {
+		getFizzIfRequired : getFizzIfRequired,
+		getBuzzIfRequired : getBuzzIfRequired
+	}
+
+}();
+
 var FizzBuzz = function(input) {
 	var message = "";
-	if(calculator.isDivisibleByThree(input) || stringInspector.containsThree(input)) {
-		message += "Fizz";
-	}
-		
-	if(calculator.isDivisibleByFive(input) || stringInspector.containsFive(input)) {
-		message += "Buzz";
-	}
-	
+	message += wordGetter.getFizzIfRequired(input);
+	message += wordGetter.getBuzzIfRequired(input);
 	return (message == "") ? input.toString() : message;
 }
