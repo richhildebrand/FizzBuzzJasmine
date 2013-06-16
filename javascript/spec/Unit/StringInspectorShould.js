@@ -1,6 +1,6 @@
 "use strict";
 
-describe("StringInspector", function() {
+describe("Unit Test - StringInspector", function() {
 
 	it("should return true if input contains a three", function() {
 		var numbersThatContainThree = [3, 23, 31, 301, 734];

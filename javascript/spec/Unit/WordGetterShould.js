@@ -1,6 +1,6 @@
 "use strict";
 
-describe("WordGetter", function() {
+describe("Unit Test - WordGetter", function() {
 
 	it("should return Fizz if input is divisible by three", function() {
 		spyOn(stringInspector, 'containsThree').andReturn(false);

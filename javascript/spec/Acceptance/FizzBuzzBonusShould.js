@@ -1,6 +1,6 @@
 "use strict";
 
-describe("Bonus - FizzBuzz", function() {
+describe("Acceptance Test - Bonus FizzBuzz", function() {
 	beforeEach(function() {
 		this.addMatchers(specHelpers)
 	});

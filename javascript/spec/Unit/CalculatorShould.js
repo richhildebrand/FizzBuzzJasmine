@@ -1,6 +1,6 @@
 "use strict";
 
-describe("Calculator", function(){
+describe("Unit Test - Calculator", function(){
 
 	it("should return true when input is divisible by three", function() {
 		var numbersDivisibleByThree = [3, 9, 30, 555];
