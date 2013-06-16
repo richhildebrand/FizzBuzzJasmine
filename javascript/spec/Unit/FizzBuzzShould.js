@@ -1,30 +1,39 @@
 "use strict";
 
 describe("Unit Test - FizzBuzz", function() {
+	var fizzBuzzKata;
+	var _fizzBuzz;
+	var _wordGetter;
+
+	beforeEach(function() {
+		fizzBuzzKata = new FizzBuzzKata();
+		_fizzBuzz = fizzBuzzKata.FizzBuzz;
+		_wordGetter = fizzBuzzKata.wordGetter;
+	})
 
 	it("should return Fizz if required", function() {
-		spyOn(wordGetter, "getFizzIfRequired").andReturn("Fizz");
-		spyOn(wordGetter, "getBuzzIfRequired").andReturn("");
+		spyOn(_wordGetter, "getFizzIfRequired").andReturn("Fizz");
+		spyOn(_wordGetter, "getBuzzIfRequired").andReturn("");
 
-		var result = FizzBuzz(5);
+		var result = _fizzBuzz(5);
 		expect(result).toBe("Fizz");
 	});
 
 	it("should return Buzz if required", function() {
-		spyOn(wordGetter, "getFizzIfRequired").andReturn("");
-		spyOn(wordGetter, "getBuzzIfRequired").andReturn("Buzz");
+		spyOn(_wordGetter, "getFizzIfRequired").andReturn("");
+		spyOn(_wordGetter, "getBuzzIfRequired").andReturn("Buzz");
 
-		var result = FizzBuzz(3);
+		var result = _fizzBuzz(3);
 
 		expect(result).toBe("Buzz");
 	});
 
 	it("should return input if neither Fizz nor Buzz is required", function() {
 		var input = 3;
-		spyOn(wordGetter, 'getFizzIfRequired').andReturn("");
-		spyOn(wordGetter, 'getBuzzIfRequired').andReturn("");
+		spyOn(_wordGetter, 'getFizzIfRequired').andReturn("");
+		spyOn(_wordGetter, 'getBuzzIfRequired').andReturn("");
 
-		var result = FizzBuzz(input);
+		var result = _fizzBuzz(input);
 
 		expect(result).toBe(input.toString());
 	});
